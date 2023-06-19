@@ -8,15 +8,41 @@ const LINKING_ERROR =
 
 const HttpClient = NativeModules.HttpClient
   ? NativeModules.HttpClient
-  : new Proxy(
+  : (new Proxy(
       {},
       {
         get() {
           throw new Error(LINKING_ERROR);
         },
       }
-    );
+    ) as NativeHttpClientApi) || undefined;
 
-export function multiply(a: number, b: number): Promise<number> {
-  return HttpClient.multiply(a, b);
+type Headers = { [headerName: string]: string };
+
+type HttpGetResult = {
+  statusCode: number;
+  requestHeaders: Headers;
+  responseHeaders: Headers;
+  body: string;
+};
+
+type RequestOptions = {
+  headers?: { [key: string]: string };
+  params?: { [key: string]: string };
+};
+
+interface NativeHttpClientApi {
+  get(url: string, optionsJson?: string): Promise<string>;
 }
+
+interface NativeHttpClientApiWrapper {
+  get(url: string, options?: RequestOptions): Promise<HttpGetResult>;
+}
+
+export const client: NativeHttpClientApiWrapper = {
+  get: async (url, options) => {
+    const optionsJson = options ? JSON.stringify(options) : undefined;
+    const output = await HttpClient.get(url, optionsJson);
+    return JSON.parse(output);
+  },
+};
