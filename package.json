@@ -41,7 +41,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/freshheads/react-native-http-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freshheads/react-native-http-client.git"
+  },
   "author": "Kevin van der Burg <kevin.van.der.burg@freshheads.com> (https://www.freshheads.com/)",
   "license": "MIT",
   "bugs": {
