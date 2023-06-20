@@ -41,13 +41,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/KevinvdBurg/react-native-http-client",
+  "repository": "https://github.com/freshheads/react-native-http-client",
   "author": "Kevin van der Burg <kevin.van.der.burg@freshheads.com> (https://www.freshheads.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KevinvdBurg/react-native-http-client/issues"
+    "url": "https://github.com/freshheads/react-native-http-client/issues"
   },
-  "homepage": "https://github.com/KevinvdBurg/react-native-http-client#readme",
+  "homepage": "https://github.com/freshheads/react-native-http-client#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
