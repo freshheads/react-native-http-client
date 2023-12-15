@@ -4,4 +4,9 @@
 
 RCT_EXTERN_METHOD(get:(NSString *)url optionsJson:(NSString *)options resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
+
 @end
