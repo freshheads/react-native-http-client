@@ -1,6 +1,6 @@
 {
   "name": "@freshheads/react-native-http-client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Native HTTP Client for React Native projects.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
